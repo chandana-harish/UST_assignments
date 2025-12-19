@@ -1,12 +1,30 @@
 import java.util.Scanner;
 class Employee{
-    String name;
-    int employee_Id;
-    double salary;
+    private String name;
+    private int employee_Id;
+    private double salary;
     Employee( String name,int employee_Id,double salary){
         this.name=name;
         this.employee_Id=employee_Id;
         this.salary=salary;
+    }
+    public void setName(String Name){
+        this.name=name;
+    }
+    public void setId(int employee_Id){
+      this.employee_Id=employee_Id;
+    }
+    public void setSaalary(double salary){
+        this.salary=salary;
+    }
+    public String getName(){
+        return name;
+    }
+    public int getId(){
+        return employee_Id;
+    }
+    public double getSalary(){
+        return salary;
     }
     public void displayDetails(){
         System.out.println("employee details are");
@@ -17,32 +35,40 @@ class Employee{
     }
 }
 class Manager extends Employee{
-    int teamSize;
+    private int teamSize;
     Manager( String name,int employee_Id,double salary,int teamSize){
         super(name,employee_Id,salary);
         this.teamSize=teamSize;
     }
+    public void setTeamSize(String programmingLanguage){
+        this.teamSize=teamSize;
+    }
+    public int getTeamSize(){
+        return teamSize;
+    }
     public void displayDetails(){
           System.out.println("Employee details are");
-         System.out.println("Employee Name: "+name);
-          System.out.println("Emoployee ID: "+employee_Id);
-           System.out.println("Employee Salary: "+salary);
+         super.displayDetails();
        System.out.println("Size: "+teamSize);
         
     }
     
 }
 class Developer extends Employee{
-    String programmingLanguage;
+    private String programmingLanguage;
     Developer( String name,int employee_Id,double salary,String programmingLanguage){
         super(name,employee_Id,salary);
         this.programmingLanguage=programmingLanguage;
     }
+    public void setProgramLang(String programmingLanguage){
+        this.programmingLanguage=programmingLanguage;
+    }
+    public String getProgramLang(){
+        return programmingLanguage;
+    }
      public void displayDetails(){
          System.out.println("Employee details are");
-         System.out.println("Employee Name: "+name);
-          System.out.println("Emoployee ID: "+employee_Id);
-           System.out.println("Employee Salary: "+salary);
+         super.displayDetails();
        System.out.println("Programming Language: "+programmingLanguage);
         
     }
